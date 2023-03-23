@@ -1,0 +1,85 @@
+definitions:
+  User:
+    type: object
+    properties:
+      firstName:
+        type: string
+      sencondName:
+        type: string
+      surname:
+        type: string
+      typeDocument:
+        type: number
+      documentNumber:
+        type: number
+      email:
+        type: string
+      phone:
+        type: string
+    example:
+        {
+            "firstName": "adminName",
+            "secondName": "adminSecondName",
+            "surname": "adminSurname",
+            "secondSurName": "adminSecondSurname",
+            "typeDocument": 1,
+            "documentNumber": "312321312",
+            "email": "admin@12312gmail.co",
+            "password":"admin",
+            "rol":1,
+            "phone": "32123122314"
+        }
+
+
+
+#/components/schemas/User'
+components:
+  schemas:
+    user:
+        type: object
+        properties:            
+            email:
+                type: string
+                description: correo electronico
+            password:
+                type: string
+                description: contraseña de usuario
+        required:
+            - email
+            - password            
+        example:
+            email: admin@gmail.co
+            password: admin
+    getUser:
+            type: object
+            properties:
+                perPage:
+                  type: number
+                  description: datos por página
+                page:
+                  type: number
+                  description: pagina elegida
+                filter:
+                  type: object
+                  properties: 
+                    name:
+                      type: string
+                      descrption: filtro de busqueda
+            example:
+                    {
+                      "perPage": 10,
+                      "page": 1,
+                      "filter": {
+                          "name": "j"
+                      }
+                  }
+
+
+
+
+
+
+
+
+
+

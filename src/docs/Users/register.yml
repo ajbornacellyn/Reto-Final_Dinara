@@ -1,0 +1,45 @@
+/api/v1/user/create:
+  post:
+    tags:
+      - Crear Usuario
+    description: Crear un nuevo usuario en el sistema. Cambie numero de documento y correo,
+    security:
+    - bearerAuth: []
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+              $ref: '#/definitions/User'
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    status:
+                      type: bool
+                    message:
+                      type: string
+                msj:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "firstName": "adminName",
+                  "secondName": "adminSecondName",
+                  "surname": "adminSurname",
+                  "secondSurName": "adminSecondSurname",
+                  "typeDocument": 1,
+                  "documentNumber": "312321312",
+                  "email": "admin@12312gmail.co",
+                  "password":"admin",
+                  "rol":1,
+                  "phone": "32123122314"
+              }

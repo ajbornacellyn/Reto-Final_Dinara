@@ -1,0 +1,39 @@
+definitions:
+  Question:
+    type: object
+    properties:
+      question:
+        type: string
+      options:
+        type: list
+        properties:
+          options:
+            type: string
+          iscorrect:
+            type: bool
+    example:
+        {
+            "question": "¿que dia es hoy?",
+            "options": [
+                {
+                    "opcion":"esta es correcta",
+                    "iscorrect":true
+                },{
+                    "opcion":"incorrecta",
+                    "iscorrect":false
+                } 
+              ]
+        }
+        
+components:
+  schemas:
+    question:
+        type: object
+        properties:            
+            question:
+                type: string
+                description: correo electronico
+        required:
+            - question
+        example:
+            question: "qué dia es hoy?"

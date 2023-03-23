@@ -1,0 +1,37 @@
+/api/v1/questions/create:
+  post:
+    tags:
+      - Crear Pregunta
+    description: Crear una nueva pregunta en el sistema.
+    security:
+    - bearerAuth: []
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+              $ref: '#/definitions/Question'
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    status:
+                      type: bool
+                    message:
+                      type: string
+                msj:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "Pregunta creada exitosamente"
+              }

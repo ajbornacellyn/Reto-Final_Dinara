@@ -1,0 +1,48 @@
+/api/v1/questions/getOptions/{questionId}:
+  get:
+    tags:
+      - Listar opciones de Pregunta
+    security:
+    - bearerAuth: []
+    description: Listar Opciones de una pregunta por su Id
+    parameters:
+        - in path:
+          name: questionId
+          schema:
+            type: number
+            minimum: 1
+          description: Numero ID de la pregunta.
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/definitions/Question'              
+            example:
+              {
+                  "status": true,
+                  "message": "Listado de opciones",
+                  "options": [
+                      {
+                          "id": 4,
+                          "answer": "incorrecta"
+                      },
+                      {
+                          "id": 5,
+                          "answer": "incorrecta"
+                      },
+                      {
+                          "id": 2,
+                          "answer": "correcta"
+                      },
+                      {
+                          "id": 3,
+                          "answer": "correcta"
+                      }
+                  ]
+              }

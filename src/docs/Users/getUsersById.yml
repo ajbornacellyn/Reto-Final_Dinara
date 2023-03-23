@@ -1,0 +1,37 @@
+/api/v1/user/getUser/{userId}:
+  get:
+    tags:
+      - Buscar usuario por Id
+    security:
+    - bearerAuth: []
+    parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: number
+            minimum: 1
+          description: Numero ID del udsuario a buscar
+    description: listar usuario por un ID
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/definitions/User'              
+            example:
+              {
+                  "firstName": "Name",
+                  "secondName": "SecondName",
+                  "surname": "Surname",
+                  "secondSurName": "SecondSurname",
+                  "typeDocument": 1,
+                  "documentNumber": "2",
+                  "email": "estudent4@gmail.co",
+                  "phone": "2313123"
+              }

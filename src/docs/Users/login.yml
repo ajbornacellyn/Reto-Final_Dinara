@@ -1,0 +1,33 @@
+/api/v1/login:
+  post:
+    tags:
+      - Login
+    description: Logear cuenta
+    requestBody:
+      content:
+        application/json:
+          schema:
+              $ref: '#/components/schemas/user'          
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    state:
+                      type: bool
+                    message:
+                      type: string
+                msj:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+                  {
+                      "state": true,
+                      "message": "Pregunta creada exitosamente"
+                  }

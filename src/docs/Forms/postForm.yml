@@ -1,0 +1,45 @@
+/api/v1/questions/updateAnswer/{answerId}:
+  put:
+    tags:
+      - Editar  respuesta
+    description: Actualizar una respuesta mediante el Id.
+    security:
+    - bearerAuth: []
+    parameters:
+        - in: path
+          name: answerId
+          required: true
+          schema:
+            type: number
+            minimum: 1
+          description: Numero ID de la pregunta.
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+              $ref: '#/definitions/Answer'
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    status:
+                      type: bool
+                    message:
+                      type: string
+                msj:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+                  {
+                      "state": true,
+                      "message": "opcion Editada con exito"
+                  }

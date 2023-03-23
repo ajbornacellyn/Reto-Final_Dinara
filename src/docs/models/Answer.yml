@@ -1,0 +1,13 @@
+definitions:
+  Answer:
+    type: object
+    properties:
+      option:
+        type: string
+      iscorrect:
+        type: bool
+    example:
+        {
+                "opcion": "correcta",
+                "iscorrect":true
+        }

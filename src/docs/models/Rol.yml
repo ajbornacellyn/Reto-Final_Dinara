@@ -1,0 +1,11 @@
+definitions:
+  Rol:
+    type: object
+    properties:
+      name:
+        type: string
+    example:
+        {
+            "name": "estudiante2"
+        }
+                

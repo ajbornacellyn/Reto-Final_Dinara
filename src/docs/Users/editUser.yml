@@ -1,0 +1,45 @@
+/api/v1/user/update/{userId}:
+  put:
+    tags:
+      - Actualizar Usuario
+    description: Actualizar un usuario medinate su id
+    security:
+    - bearerAuth: []
+    parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: number
+            minimum: 1
+          description: Numero ID del usuario a editar.
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+              $ref: '#/definitions/User'
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                response:
+                  type: object
+                  properties:
+                    status:
+                      type: bool
+                    message:
+                      type: string
+                msj:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "Se actualizo correctamente"
+              }
