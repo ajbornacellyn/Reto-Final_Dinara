@@ -6,11 +6,11 @@
     security:
     - bearerAuth: []
     parameters:
-        - in path:
+        - in: path
           name: questionId
           schema:
             type: number
-            minimum: 1
+          required: true
           description: Numero ID de la pregunta
     produces:
       - application/json

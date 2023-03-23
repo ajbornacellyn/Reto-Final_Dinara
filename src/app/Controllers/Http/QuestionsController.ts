@@ -1,6 +1,8 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Question from 'App/Models/Question';
 import Answer from 'App/Models/Answer';
+import Database from '@ioc:Adonis/Lucid/Database';
+
 
 export default class QuestionsController {
 
@@ -105,7 +107,7 @@ export default class QuestionsController {
   public async listOptions({request, response}: HttpContextContract) {
     try {
       const idQuestion = request.param('id_question');
-      const options = await Answer.query().where('question_id', idQuestion).select(['id', 'answer'])
+      const options = await Database.from('answers').select(['id', 'answer as option']).where('question_id', idQuestion);
       response.status(200).json({
         "status": true,
         "message": "Listado de opciones",

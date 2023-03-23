@@ -2,7 +2,7 @@
   put:
     tags:
       - Editar Pregunta
-    description: editar una nueva pregunta en el sistema.
+    description: editar una pregunta en el sistema.
     security:
     - bearerAuth: []
     parameters:

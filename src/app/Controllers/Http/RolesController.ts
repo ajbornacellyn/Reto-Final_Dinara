@@ -19,4 +19,18 @@ export default class RolesController {
       })
     }
   }
+  public async getRoles({response}: HttpContextContract) {
+    try {
+      const roles = await Role.query().select(['id', 'name']);
+      response.status(200).json({
+        "state": true,
+        "roles": roles
+      })
+    } catch (error) {
+      response.status(500).json({
+        "state": false,
+        "message": "Error al listar los roles"
+      })
+    }
+  }
 }
