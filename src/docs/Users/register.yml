@@ -1,7 +1,7 @@
 /api/v1/user/create:
   post:
     tags:
-      - Crear Usuario
+      - Usuario
     description: Crear un nuevo usuario en el sistema. Cambie numero de documento y correo,
     security:
     - bearerAuth: []

@@ -33,4 +33,28 @@ export default class RolesController {
       })
     }
   }
+  public async putRole({request, response}: HttpContextContract) {
+    const {id, name} = request.all();
+    try {
+      const role = await Role.find(id);
+      if(role){
+        role.name = name;
+        await role.save();
+        response.status(200).json({
+        "state": true,
+        "message": "Rol actualizado correctamente"
+      })
+      }else{
+        response.status(500).json({
+          "state": false,
+          "message": "No se encontro el rol"
+        })
+      }
+    } catch (error) {
+      response.status(500).json({
+        "state": false,
+        "message": "Error al actualizar el rol"
+      })
+    }
+  }
 }

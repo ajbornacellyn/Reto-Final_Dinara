@@ -1,7 +1,7 @@
 /api/v1/user/update/{userId}:
   put:
     tags:
-      - Actualizar Usuario
+      -  Usuario
     description: Actualizar un usuario medinate su id
     security:
     - bearerAuth: []

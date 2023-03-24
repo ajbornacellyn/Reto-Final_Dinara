@@ -1,7 +1,7 @@
 /api/v1/user/getUsers:
   post:
     tags:
-      - Listar Usuarios
+      - Usuario
     security:
     - bearerAuth: []
     description: Listar Usuarios

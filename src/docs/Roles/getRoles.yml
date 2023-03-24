@@ -1,7 +1,7 @@
 /api/v1/role/getRoles:
   get:
     tags:
-      - Listar roles
+      - Rol
     security:
     - bearerAuth: []
     description: listar roles.

@@ -1,7 +1,7 @@
 /api/v1/questions/getQuestions:
   get:
     tags:
-      - Listar preguntas
+      - Pregunta
     security:
     - bearerAuth: []
     description: Listar Usuarios

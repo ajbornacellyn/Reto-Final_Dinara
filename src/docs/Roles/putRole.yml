@@ -1,17 +1,24 @@
-/api/v1/questions/create:
-  post:
+/api/v1/role/update/{roleId}:
+  put:
     tags:
-      - Pregunta
-    description: Crear una nueva pregunta en el sistema.
+      - Rol
+    description: editar un rol en el sistema.
     security:
     - bearerAuth: []
+    parameters:
+        - in path:
+          name: roleId
+          schema:
+            type: number
+            minimum: 1
+          description: Id del rol a editar
     produces:
       - application/json
     requestBody:
       content:
         application/json:
           schema:
-              $ref: '#/definitions/Question'
+              $ref: '#/components/schemas/question'
     responses:
       200:
         description: Petición exitosa
@@ -33,5 +40,5 @@
             example:
               {
                   "state": true,
-                  "message": "Pregunta creada exitosamente"
+                  "message": "Rol editado exitosamente"
               }

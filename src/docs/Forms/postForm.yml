@@ -1,25 +1,17 @@
-/api/v1/questions/updateAnswer/{answerId}:
-  put:
+/api/v1/form/postquestions/:
+  post:
     tags:
-      - Editar  respuesta
-    description: Actualizar una respuesta mediante el Id.
+      - Craer  formulario
+    description: crear formulario de estudiante
     security:
     - bearerAuth: []
-    parameters:
-        - in: path
-          name: answerId
-          required: true
-          schema:
-            type: number
-            minimum: 1
-          description: Numero ID de la pregunta.
     produces:
       - application/json
     requestBody:
       content:
         application/json:
           schema:
-              $ref: '#/definitions/Answer'
+              $ref: '#/definitions/Form'
     responses:
       200:
         description: Petición exitosa
@@ -41,5 +33,5 @@
             example:
                   {
                       "state": true,
-                      "message": "opcion Editada con exito"
+                      "message": "Respuestas almacenadas con exito"
                   }

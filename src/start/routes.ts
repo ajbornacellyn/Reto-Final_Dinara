@@ -38,6 +38,7 @@ Route.group(() => {
 Route.group(() => {
   Route.post('/create', 'RolesController.CreateRole').middleware('VerifyAdmin')
   Route.get('/getRoles', 'RolesController.getRoles').middleware('VerifyAdmin')
+  Route.put('/update/:id', 'RolesController.putRole').middleware('VerifyAdmin')
 }).prefix('api/v1/role').middleware('AuthJwt')
 
 Route.group(() => {

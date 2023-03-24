@@ -1,7 +1,7 @@
 /api/v1/typeDocument/create:
   post:
     tags:
-      - Crear Tipo de documento
+      - Tipo de documento
     description: Crear un tipo de documento en el sistema.
     security:
     - bearerAuth: []

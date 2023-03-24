@@ -1,7 +1,7 @@
 /api/v1/login:
   post:
     tags:
-      - Login
+      - Usuario
     description: Logear cuenta
     requestBody:
       content:

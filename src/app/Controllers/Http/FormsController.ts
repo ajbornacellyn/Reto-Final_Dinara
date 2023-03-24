@@ -47,4 +47,20 @@ export default class FormsController {
     }
 
   }
+  public async stundentForms({request, response}: HttpContextContract) {
+    const {estudianteId} = request.all();
+    try {
+      const forms = await Form.query().select(['forms.id', 'questions.question', 'answers.answer']).where('forms.student_id', estudianteId).innerJoin('answers', 'forms.answer_id', 'answers.id');
+      response.status(200).json({
+        "state": true,
+        "forms": forms
+      })
+    } catch (error) {
+      console.log(error);
+      response.status(500).json({
+        "state": false,
+        "message": "Error al listar las respuestas"
+      })
+    }
+  }
 }

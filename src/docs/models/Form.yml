@@ -1,0 +1,13 @@
+definitions:
+  Form:
+    type: object
+    properties:
+      estudianteId:
+        type: number
+      answers:
+        type: list
+    example:
+        {
+                "estudianteId": 10,
+                "answers": [2,3,4,5]
+        }
